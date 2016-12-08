@@ -1,0 +1,23 @@
+{
+  "name": "gcode2svg",
+  "version": "0.0.1",
+  "description": "Simple CNC g-godes 2 svg convertor",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex18881/gcode2svg.git"
+  },
+  "keywords": [
+    "g-code",
+    "svg"
+  ],
+  "author": "alex18881",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alex18881/gcode2svg/issues"
+  },
+  "homepage": "https://github.com/alex18881/gcode2svg#readme"
+}
