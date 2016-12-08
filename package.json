@@ -1,6 +1,6 @@
 {
   "name": "gcode2svg",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "Simple CNC g-godes 2 svg convertor",
   "main": "index.js",
   "scripts": {
