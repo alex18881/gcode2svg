@@ -1,11 +1,11 @@
 # gcode2svg
-Simple CNC g-codes to SVG convertor. It takes gcode string and converts it into a __2D__ SVG.
+A simple CNC g-codes to SVG convertor. It takes a gcode string and converts it into a __2D__ SVG.
 
 This is a part of my [Arduino WIFI drawing bot][2] project.
-List of all GCodes is here: [http://reprap.org/wiki/G-code][1]
+The list of all GCodes is here: [http://reprap.org/wiki/G-code][1]
 
 ##Note
-For now this is not in-browser module. It can run only in NodeJs. But it can be easily modified to support at least modern versions of most popular browsers.
+For now this is not an in-browser module. It can run only in the NodeJs. But it can be easily modified to support at least modern versions of most popular browsers.
 
 ##Usage
 ```javascript
