@@ -4,6 +4,9 @@ Simple CNC g-codes to SVG convertor. It takes gcode string and converts it into 
 This is a part of my [Arduino WIFI drawing bot][2] project.
 List of all GCodes is here: [http://reprap.org/wiki/G-code][1]
 
+##Note
+For now this is not in-browser module. It can run only in NodeJs. But it can be easily modified to support at least modern versions of most popular browsers.
+
 ##Usage
 ```javascript
 var gcode2svg = require('gcode2svg');
@@ -20,13 +23,13 @@ npm install --save gcode2svg
 * _G1_ - draw straight line
 * _G2_ - draw arc clockwise
 * _G3_ - draw arc counterclockwise
+* _G20_ - set units to inches
+* _G21_ - set units to mm
 * _G90_ - set absolute coordinates
 * _G91_ - set relative coordinates
 
 ##Plans
 * Support following GCodes:
-  * _G20_ - set units to inches
-  * _G21_ - set units to mm
   * _M2_ - programm end
   * _M600_ - filament change pause to change color
   * _T#_ - change tool to change colors
@@ -34,6 +37,9 @@ npm install --save gcode2svg
 
 ##Links
 * [RepRap.org][3]
+
+##Contribution
+Any help is welcome. Especialy with my [drawbot][2] project
 
 #License
 MIT
