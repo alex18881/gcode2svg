@@ -39,7 +39,7 @@ npm install --save gcode2svg
 * [RepRap.org][3]
 
 ##Contribution
-Any help is welcome. Especialy with my [drawbot][2] project
+Any help is welcome. Especially with my [drawbot][2] project
 
 #License
 MIT
