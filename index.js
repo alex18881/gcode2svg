@@ -5,13 +5,17 @@ var validCodes = {
 		'M': 1
 	},
 
+	sheetSizes = {
+		mm: { width: 210, height: 297 },
+		in: { width: 11.93, height: 15.98 }
+	},
+
 	svgStart = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n' +
-		'<svg ' +
-			'xmlns="http://www.w3.org/2000/svg" ' +
+		'<svg xmlns="http://www.w3.org/2000/svg" ' +
 			'version="1.1" ' +
-			'width="210mm" ' +
-			'height="297mm" ' +
-			'viewBox="0 0 744.09448819 1052.3622047"' +
+			'width="%d%s" ' +
+			'height="%d%s" ' +
+			'viewBox="0 0 %d %d"' +
 		'>\n',
 	svgEnd = '\n</svg>',
 
@@ -19,6 +23,7 @@ var validCodes = {
 	x0A = /\r/g,
 	x0D = /\n/g,
 
+	format = require('util').format,
 	G_SvgCreators = require('./g-creators.js'),
 	M_SvgCreators = require('./m-creators.js');
 
@@ -57,16 +62,28 @@ function convert(gCodeStr) {
 		x: 0,
 		y: 0,
 		relative: false
-	};
-	return svgStart +
-		( gCodeStr || '' ).toString()
+	}, result, sizes;
+	
+	// Default units are mm
+	G_SvgCreators[21](context);
+
+	result = ( gCodeStr || '' ).toString()
 		.replace( x0A, '')
 		.split( x0D )
 		.filter( filterValidCodes )
 		.map( convertCode.bind(null, context) )
 		.filter(filterEmptyItems)
-		.join('\n') +
-		svgEnd;
+		.join('\n');
+
+	sizes = sheetSizes[context.unit];
+
+
+	return format(
+			svgStart,
+			sizes.width, context.unit,
+			sizes.height, context.unit,
+			sizes.width, sizes.height
+		) + result + svgEnd;
 }
 
 module.exports = convert;

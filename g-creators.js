@@ -78,7 +78,11 @@ function getCurve(context, node, clockwise) {
 }
 
 function setUnitsMM (context, node) {
+	context.unit = 'mm';
+}
 
+function setUnitsInch (context, node) {
+	context.unit = 'in';
 }
 
 function setAbsoluteCoords (context, node) {
@@ -94,6 +98,7 @@ module.exports = {
 	1: lineTo,
 	2: curveToCW,
 	3: curveToCCW,
+	20: setUnitsInch,
 	21: setUnitsMM,
 	90: setAbsoluteCoords,
 	91: setRelativeCoords
