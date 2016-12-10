@@ -33,7 +33,7 @@ npm install --save gcode2svg
   * _M2_ - programm end
   * _M600_ - filament change pause to change color
   * _T#_ - change tool to change colors
-* Support multiple tools with different options to swith betweent them and draw in multiple colors.
+* Support multiple tools with different options to switch between them and draw in multiple colors.
 
 ##Links
 * [RepRap.org][3]
